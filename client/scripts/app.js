@@ -25,8 +25,8 @@ var Messages = Backbone.Collection.extend({
   parse: function(response, options) {
     console.log(response);
     var results = [];
-    for (var i = response.results.length-1; i >= 0; i--) {
-      results.push(response.results[i]);
+    for (var i = response.length - 1; i >= 0; i--) {
+      results.push(response[i]);
     }
     return results;
   }
@@ -35,7 +35,7 @@ var Messages = Backbone.Collection.extend({
 var MessageView = Backbone.View.extend({
   template: _.template('<div class="chat"> \
                         <div class="username"><%- username %></div> \
-                        <div class="text"><%- text %></div> \
+                        <div class="text"><%- message %></div> \
                         </div>'),
 
   render: function() {
@@ -83,7 +83,7 @@ var FormView = Backbone.View.extend({
     var $text = this.$('#message');
     this.collection.create({
       username: window.location.search.substr(10),
-      text: $text.val()
+      message: $text.val()
     });
     $text.val('');
   },
