@@ -30,6 +30,4 @@ if (!module.parent) {
   console.log("Listening on", app.get("port"));
 }
 
-// db.connect();
-// db.dbConnection.query('INSERT INTO USERS (name) values("bryan"); ');
-
+db.connect();
