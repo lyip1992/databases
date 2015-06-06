@@ -22,7 +22,6 @@ module.exports = {
     },
     post: function (req, res) {
       models.users.post(req, res);
-      res.writeHead(200).end();
     }
   }
 };
