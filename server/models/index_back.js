@@ -1,7 +1,8 @@
-
-
-
+// MODELS is the methods to DB
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('chat', 'root', '');
 var db = require('../db');
+
 module.exports = {
   messages: {
     get: function (req, res) {
@@ -33,14 +34,7 @@ module.exports = {
 
 
 
-    }, // a function which can be used to insert a message into the database
-    s_get: function(req, res){
-
-    },
-    s_post: function(req,res){
-
-    },
-
+    } // a function which can be used to insert a message into the database
   },
 
   users: {

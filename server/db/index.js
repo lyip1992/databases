@@ -9,6 +9,5 @@ var dbConnection = exports.dbConnection = mysql.createConnection({
   database: "chat"
 });
 
-var connect = exports.connect = function() { dbConnection.connect(); };
 
 
